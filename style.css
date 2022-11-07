@@ -8,11 +8,6 @@
     src: url("fonts/RobotoFlex-Regular.ttf");
 }
 
-@font-face {
-    font-family: "Roboto Slab";
-    src: url("fonts/RobotoSlab-Medium.ttf");
-}
-
 h2, h3, h4, h5, p, #cv li {
     color: white;
 }
@@ -22,9 +17,9 @@ h2, h3, h4, h5, #bonjourText {
 }
 
 body {
-    background: #323234;
+    padding-top: 150px;
+    background: #2c2c2c;
     scroll-behavior: smooth;
-    padding-bottom: 30px;
 }
 
 h2 {
@@ -35,6 +30,7 @@ h2 {
 h3 {
     font-size: 26px;
     font-weight: bold;
+    padding-bottom: 15px;
 }
 
 h4 {
@@ -47,61 +43,79 @@ h5 {
 
 
 /* HEADER */
+
 header {
-    position: relative;
+    background: #323234;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
-#logo img {
+header img {
+    width: 150px;
     margin-left: 10px;
     transform: scale(1);
     transition: transform 0.2s ease-in;
 }
 
-#logo img:hover {
+header img:hover {
     transform: scale(1.1);
     transition: transform 0.2s ease-out;
 }
 
-nav ul {
-    position: absolute;
-    top: 50%;
+header nav {
+    width: 100%;
+}
+
+.navigation {
+    position: relative;
     margin-left: 50px;
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    column-gap: 100px;
     list-style: none;
 }
 
-nav li a {
+.navigation li a {
     color: white;
     text-decoration: none;
     font-family: "Roboto Condensed", sans-serif;
 }
 
-nav li a:hover {
+.navigation li a:hover {
     color: #b0b0b0;
 }
 
 /* MAIN */
 main {
+    width: 100%;
+}
+
+.mainContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-left: 100px;
     padding-right: 100px;
 }
 
-.content {
-    margin-bottom: 40px;
+.lightContent {
+    background: #323234;
 }
 
 .title {
     display: flex;
     align-items: center;
     justify-content: start;
+    padding-bottom: 20px;
 }
 
 .title h2 {
@@ -115,104 +129,169 @@ main {
     background: white;
 }
 
-#bonjourText {
+#bonjour, #cv, #projets {
+    padding-bottom: 150px;
+}
+
+#bonjour p {
     font-size: 28px;
 }
 
-#bonjourText p:last-child {
-    font-family: "Roboto Slab", sans-serif;
+#bonjour strong {
+    font-weight: bold;
 }
 
-#bonjourArticle {
+#bonjour article {
     display: flex;
 }
 
-#contacts {
-    width: 380px;
-    position: relative;
+#cv, #projets {
+    padding-top: 150px;
 }
 
-.circle {
-    position: absolute;
+#cv > article {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: white;
+    column-gap: 40px;
 }
 
-#linkedin {
-    top: 120px;
-    left: 30px;
+#cv > article > div > article {
+    padding-bottom: 30px;
 }
 
-#mail {
-    left: 120px;
-    top: 20px;
-}
-
-#bonjour a {
-    color: #212529;
-    text-decoration: none;
-}
-
-#cvContent {
-    display: flex;
-    gap: 40px;
-}
-
-#competences ul {
+.noListStyle ul {
     list-style-type: none;
     padding: 0;
 }
 
-#competences div {
+.noListStyle div {
     display: flex;
     gap: 40px;
 }
 
-#projetsContent {
+#projets {
+    margin-bottom: 30px;
+}
+
+.projectsList {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    row-gap: 30px;
 }
 
 .imgDescr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 15px;
+    gap: 25px;
+}
+
+.imgDescr a {
+    text-decoration: none;
 }
 
 .image {
     background: black;
     border-radius: 27px;
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
     overflow: hidden;
-    box-shadow: black 0px 0px 20px -5px;
+    box-shadow: black 0 0 20px -5px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.noPadding {
+    padding: 0 0;
 }
 
 .image img {
+    height: auto;
+    width: 100%;
+}
+
+.noPadding img {
     height: 100%;
+    width: auto;
 }
 
 .description {
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-shrink: 50;
 }
 
-#fourSouls .image, #sncf .image {
+footer {
+    background: #434343;
+    width: 100%;
+    height: 65px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    row-gap: 5px;
 }
 
-#fourSouls img, #sncf img {
-    height: auto;
-    width: 100%;
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footerLinks {
+    display: flex;
+    column-gap: 15px;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: white solid 1px;
+}
+
+.circle i {
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1100px) {
+
+    .imgDescr {
+        display: inline-block;
+    }
+
+    .description {
+        display: block;
+    }
+
+    .image {
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #cv article {
+        flex-direction: column;
+    }
+
+    .imgDescr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projectsList article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
